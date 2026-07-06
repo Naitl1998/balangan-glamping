@@ -126,6 +126,35 @@ footer li{list-style:none;padding:4px 0;font-size:14.5px}
 /* whatsapp float */
 .wa{position:fixed;right:22px;bottom:22px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 
+/* collage gallery */
+.gal2{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:12px}
+.gal2 figure{position:relative;border-radius:3px;overflow:hidden;cursor:zoom-in}
+.gal2 figure:hover img{transform:scale(1.04)}
+.gal2 img{transition:transform .4s}
+.gal2 .w2{grid-column:span 2}.gal2 .w3{grid-column:span 3}.gal2 .h2{grid-row:span 2}
+.gal2 figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;font-family:Verdana,sans-serif;font-size:11px;letter-spacing:1px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.68))}
+@media(max-width:820px){.gal2{grid-template-columns:repeat(2,1fr)}.gal2 .w2,.gal2 .w3{grid-column:span 2}}
+
+/* jacuzzi feature */
+.soak{background:var(--forest-d);color:#fff}
+.soak-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.soak-ph{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:185px;gap:12px}
+.soak-ph figure{border-radius:3px;overflow:hidden;position:relative;cursor:zoom-in}
+.soak-ph figure:first-child{grid-column:span 2}
+.soak h2{font-size:34px;margin-bottom:16px}
+.soak p{opacity:.87;margin-bottom:14px}
+.soak ul{list-style:none;margin:14px 0 28px}
+.soak li{padding:6px 0 6px 26px;position:relative;font-size:15.5px}
+.soak li::before{content:"♨";position:absolute;left:0;color:var(--terra)}
+@media(max-width:840px){.soak-grid{grid-template-columns:1fr}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:400;background:rgba(10,12,10,.88);display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:4px}
+.lb .cap{color:#fff;margin-top:14px;font-family:Verdana,sans-serif;font-size:13px;letter-spacing:1px}
+.lb .x{position:absolute;top:14px;right:24px;color:#fff;font-size:36px;cursor:pointer;background:none;border:none}
+
 /* booking modal */
 .bmodal{position:fixed;inset:0;z-index:300;background:rgba(20,25,20,.6);display:none;align-items:center;justify-content:center;padding:16px}
 .bmodal.open{display:flex}
@@ -269,16 +298,47 @@ footer li{list-style:none;padding:4px 0;font-size:14.5px}
   </div>
 </section>
 
-<section id="gallery" style="padding-top:0">
+<section class="soak" id="jacuzzi">
+  <div class="wrap">
+    <div class="soak-grid">
+      <div class="soak-ph">
+        <figure><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1000&q=65" alt="Free-standing bath" onerror="this.src='https://picsum.photos/seed/jz1/1000/500'"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=65" alt="Spa bathroom" onerror="this.src='https://picsum.photos/seed/jz2/600/450'"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=65" alt="Pool at night" onerror="this.src='https://picsum.photos/seed/jz3/600/450'"></figure>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:#e8b491">Signature experience</div>
+        <h2>A jacuzzi under<br>the Bali stars</h2>
+        <p>The moment everyone books us for: warm water, cool night air, frangipani on the breeze — and nothing on the schedule until morning yoga.</p>
+        <ul>
+          <li>Open-air jacuzzi sessions at sunset &amp; after dark</li>
+          <li>Free-standing stone bath in every Wellness Suite</li>
+          <li>Bath ritual: salts, flowers &amp; candles, prepared for you</li>
+          <li>Pair it with a couple's massage — in-tent or in-spa</li>
+        </ul>
+        <a class="btn" href="#book" data-room="Wellness Suite">Book the Wellness Suite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
   <div class="wrap">
     <div class="eyebrow">Gallery</div>
     <h2 class="sec-title">A Look Around</h2>
-    <div class="gal">
-      <figure><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g1/1200/800'"><figcaption>The pool at golden hour</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g2/700/500'"><figcaption>Balangan Beach, 5 min away</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g3/700/500'"><figcaption>Morning yoga</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g4/700/500'"><figcaption>Uluwatu surf breaks</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g5/700/500'"><figcaption>Inside a Panorama Tent</figcaption></figure>
+    <p class="sec-sub">Click any photo to view it full screen.</p>
+    <div class="gal2">
+      <figure class="w3 h2"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g1/1200/800'"><figcaption>The pool at golden hour</figcaption></figure>
+      <figure class="w3"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=900&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g2/900/500'"><figcaption>Stone bath ritual — Wellness Suite</figcaption></figure>
+      <figure class="w3"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g3/900/500'"><figcaption>Inside a Panorama Tent</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g4/700/500'"><figcaption>Balangan Beach, 5 min away</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g5/700/500'"><figcaption>Jacuzzi &amp; spa pavilion</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g6/700/500'"><figcaption>Morning yoga</figcaption></figure>
+      <figure class="w3"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g7/900/500'"><figcaption>Balinese massage, in-tent or in-spa</figcaption></figure>
+      <figure class="w3"><img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=900&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g8/900/500'"><figcaption>Tents glowing after dark</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g9/700/500'"><figcaption>Uluwatu surf breaks</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g10/700/500'"><figcaption>Space to slow down</figcaption></figure>
+      <figure class="w2"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=65" alt="" onerror="this.src='https://picsum.photos/seed/g11/700/500'"><figcaption>Night swims, warm water</figcaption></figure>
     </div>
   </div>
 </section>
@@ -348,6 +408,8 @@ footer li{list-style:none;padding:4px 0;font-size:14.5px}
 </footer>
 
 <a class="wa" href="https://wa.me/620000000000" title="WhatsApp" aria-label="Chat on WhatsApp">✆</a>
+
+<div class="lb" id="lb"><button class="x" onclick="lbClose()" aria-label="Close">×</button><img id="lb-img" alt=""><div class="cap" id="lb-cap"></div></div>
 
 <div class="bmodal" id="bmodal" role="dialog" aria-modal="true">
   <div class="bcard">
@@ -554,10 +616,26 @@ document.querySelectorAll('a[href="#book"]').forEach(function(a){
   a.addEventListener('click', function(e){
     e.preventDefault();
     var card = a.closest('.tent');
-    var room = card ? card.querySelector('h3').textContent : null;
+    var room = a.dataset.room || (card ? card.querySelector('h3').textContent : null);
     bmOpen(room);
   });
 });
+
+/* lightbox */
+var lb = document.getElementById('lb');
+document.querySelectorAll('.gal2 figure, .soak-ph figure').forEach(function(f){
+  f.addEventListener('click', function(){
+    var img = f.querySelector('img');
+    var cap = f.querySelector('figcaption');
+    document.getElementById('lb-img').src = img.src.replace('w=700','w=1400').replace('w=900','w=1400').replace('w=1000','w=1400').replace('w=1200','w=1600');
+    document.getElementById('lb-cap').textContent = cap ? cap.textContent : (img.alt || '');
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+function lbClose(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+lb.addEventListener('click', function(e){ if(e.target === lb || e.target.id === 'lb-img') lbClose(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ lbClose(); bmClose(); } });
 </script>
 
 </body>
